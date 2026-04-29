@@ -25,23 +25,14 @@ public class ListCommand implements Runnable {
     public void run() {
         List<Product> products = service.getProducts();
 
+        ProductFormatter formatter;
+
         if ("json".equals(format)) {
-            System.out.println("[");
-            for (int i = 0; i < products.size(); i++) {
-                Product p = products.get(i);
-                System.out.print("  {\"name\": \"" + p.getName() + "\", \"price\": " + p.getPrice() + "}");
-                if (i < products.size() - 1) {
-                    System.out.println(",");
-                } else {
-                    System.out.println();
-                }
-            }
-            System.out.println("]");
+            formatter = new JsonProductFormatter();
         } else {
-            System.out.println("Name      Price");
-            for (Product p : products) {
-                System.out.println(p.getName() + "   " + p.getPrice());
-            }
+            formatter = new TableProductFormatter();
         }
+
+        System.out.println(formatter.format(products));
     }
 }
