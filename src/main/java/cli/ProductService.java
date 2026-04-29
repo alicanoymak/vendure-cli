@@ -4,6 +4,9 @@ import java.util.List;
 
 public class ProductService {
     public List<Product> getProducts() {
-        throw new UnsupportedOperationException();
+        return List.of(
+                new Product(),
+                new Product()
+        );
     }
 }
