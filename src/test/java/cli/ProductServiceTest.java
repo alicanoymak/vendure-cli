@@ -4,34 +4,34 @@ import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class ProductServiceTest {
 
-    @Test
-    void shouldReturnTwoProducts() {
-        ProductService service = new ProductService();
+  @Test
+  void shouldReturnTwoProducts() {
+    ProductService service = new ProductService();
 
-        List<Product> products = service.getProducts();
+    List<Product> products = service.getProducts();
 
-        assertEquals(2, products.size());
-    }
+    assertEquals(2, products.size());
+  }
 
-    @Test
-    void shouldReturnFirstProductWithName() {
-        ProductService service = new ProductService();
+  @Test
+  void shouldReturnFirstProductWithName() {
+    ProductService service = new ProductService();
 
-        List<Product> products = service.getProducts();
+    List<Product> products = service.getProducts();
 
-        assertEquals("Tablet", products.get(0).getName());
-    }
+    assertEquals("Tablet", products.get(0).getName());
+  }
 
-    @Test
-    void shouldReturnFirstProductWithPrice() {
-        ProductService service = new ProductService();
+  @Test
+  void shouldReturnFirstProductWithPrice() {
+    ProductService service = new ProductService();
 
-        List<Product> products = service.getProducts();
+    List<Product> products = service.getProducts();
 
-        assertEquals(32900, products.get(0).getPrice());
-    }
+    assertEquals(32900, products.get(0).getPrice());
+  }
 }

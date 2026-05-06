@@ -13,35 +13,35 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class MainTest {
 
-    private ByteArrayOutputStream outputStream;
-    private final PrintStream originalOut = System.out;
+  private ByteArrayOutputStream outputStream;
+  private final PrintStream originalOut = System.out;
 
-    @BeforeEach
-    void setUp() {
-        outputStream = new ByteArrayOutputStream();
-        System.setOut(new PrintStream(outputStream));
-    }
+  @BeforeEach
+  void setUp() {
+    outputStream = new ByteArrayOutputStream();
+    System.setOut(new PrintStream(outputStream));
+  }
 
-    @AfterEach
-    void tearDown() {
-        System.setOut(originalOut);
-    }
+  @AfterEach
+  void tearDown() {
+    System.setOut(originalOut);
+  }
 
-    @Test
-    void shouldAcceptUrlBeforeSubcommand() {
-        int exitCode = new CommandLine(new Main())
-                .execute("--url", "http://localhost:3000/shop-api", "list");
+  @Test
+  void shouldAcceptUrlBeforeSubcommand() {
+    int exitCode =
+        new CommandLine(new Main()).execute("--url", "http://localhost:3000/shop-api", "list");
 
-        assertEquals(0, exitCode);
-        assertTrue(outputStream.toString().contains("Tablet"));
-    }
+    assertEquals(0, exitCode);
+    assertTrue(outputStream.toString().contains("Tablet"));
+  }
 
-    @Test
-    void shouldAcceptUrlAfterSubcommand() {
-        int exitCode = new CommandLine(new Main())
-                .execute("list", "--url", "http://localhost:3000/shop-api");
+  @Test
+  void shouldAcceptUrlAfterSubcommand() {
+    int exitCode =
+        new CommandLine(new Main()).execute("list", "--url", "http://localhost:3000/shop-api");
 
-        assertEquals(0, exitCode);
-        assertTrue(outputStream.toString().contains("Tablet"));
-    }
+    assertEquals(0, exitCode);
+    assertTrue(outputStream.toString().contains("Tablet"));
+  }
 }
