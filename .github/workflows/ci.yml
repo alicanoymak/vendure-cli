@@ -21,3 +21,15 @@ jobs:
 
       - name: Run tests
         run: mvn test
+
+  format:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Check Java format
+        uses: axel-op/googlejavaformat-action@v4
+        with:
+          args: "--dry-run --set-exit-if-changed"
