@@ -40,8 +40,4 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           release-name: v1.24.0
-          args: "--replace"
-          skip-commit: true
-
-      - name: Check formatting diff
-        run: git --no-pager diff --exit-code
+          args: "--set-exit-if-changed"

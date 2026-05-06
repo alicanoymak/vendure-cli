@@ -1,9 +1,8 @@
 package cli;
 
+import java.util.List;
 import picocli.CommandLine.Command;
 import picocli.CommandLine.Option;
-
-import java.util.List;
 
 @Command(name = "list")
 public class ListCommand implements Runnable {
