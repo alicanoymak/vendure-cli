@@ -1,9 +1,17 @@
 package cli;
 
+import cli.graphql.GraphQlClient;
+import cli.vendure.ProductsQuery;
 import java.util.List;
 
 public class ProductService {
+  private final GraphQlClient client;
+
+  public ProductService(GraphQlClient client) {
+    this.client = client;
+  }
+
   public List<Product> getProducts() {
-    return List.of(new Product("Tablet", 32900), new Product("Monitor", 19900));
+    return client.execute(new ProductsQuery());
   }
 }

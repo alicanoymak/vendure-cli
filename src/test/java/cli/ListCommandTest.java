@@ -27,7 +27,7 @@ public class ListCommandTest {
   }
 
   private ProductService fakeService() {
-    return new ProductService() {
+    return new ProductService(null) {
       @Override
       public List<Product> getProducts() {
         return List.of(new Product("Tablet", 32900), new Product("Monitor", 19900));
