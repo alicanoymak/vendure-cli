@@ -67,10 +67,10 @@ public class GraphQlClientTest {
     @Override
     public String toGraphQl() {
       return """
-          query {
-            test
-          }
-          """;
+             query {
+               test
+             }
+             """;
     }
 
     @Override

@@ -28,17 +28,17 @@ public class ProductDetailQueryTest {
   void shouldParseProductDetailResponse() throws Exception {
     String json =
         """
-               {
-                 "product": {
-                   "name": "Laptop",
-                   "variants": [
-                     {
-                       "price": 129900
-                     }
-                   ]
-                 }
-               }
-               """;
+        {
+          "product": {
+            "name": "Laptop",
+            "variants": [
+              {
+                "price": 129900
+              }
+            ]
+          }
+        }
+        """;
 
     ObjectMapper mapper = new ObjectMapper();
     JsonNode data = mapper.readTree(json);

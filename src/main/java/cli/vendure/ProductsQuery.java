@@ -11,17 +11,17 @@ public class ProductsQuery implements GraphQlQuery<List<Product>> {
   @Override
   public String toGraphQl() {
     return """
-        query {
-          products {
-            items {
-              name
-              variants {
-                price
-              }
-            }
-          }
-        }
-        """;
+           query {
+             products {
+               items {
+                 name
+                 variants {
+                   price
+                 }
+               }
+             }
+           }
+           """;
   }
 
   @Override

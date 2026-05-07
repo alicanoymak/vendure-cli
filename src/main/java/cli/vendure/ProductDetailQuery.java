@@ -15,15 +15,15 @@ public class ProductDetailQuery implements GraphQlQuery<Product> {
   @Override
   public String toGraphQl() {
     return """
-          query {
-            product(id: "%s") {
-              name
-              variants {
-                price
-              }
-            }
-          }
-          """
+           query {
+             product(id: "%s") {
+               name
+               variants {
+                 price
+               }
+             }
+           }
+           """
         .formatted(id);
   }
 
