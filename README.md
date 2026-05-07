@@ -2,7 +2,7 @@
 
 CLI Java pour interagir avec l'API GraphQL Shop de Vendure.
 
-## Contexte
+## Contexte :
 
 Ce projet a été réalisé dans le cadre du cours de Génie logiciel (SP26) à l'Université de Fribourg.
 
